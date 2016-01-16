@@ -1,0 +1,25 @@
+1.	Generics allows us to specify the type of stored object here to allow type safety at compile time.
+
+2.	We benefit from the fact that the Storage class can be used to store any object type and we know at compile time 
+	what to expect from a field declared as a Storage type.
+	
+3.	The object method setValue() for aStorage (Storage<BankAccount>) is being invoked with an Object rather than a
+	BankAccount. This is because field myAccount is declared as an Object even though it is populated with an instnace
+	of the BankAccount class.   	
+	
+4.	The code will not compile as the field myAccount is now declared as BankAccount but the return type from 
+	Class.newInstance() is Object and therefore cannot be assigned to the field.
+
+5.	The dynamic cast here informs the compiler that the result of the newInstance() method will be assignable to a
+	type of BankAccount. The cast will be done at runtime (JVM) and therefore is NOT code safe.
+	
+6.	Adding a parameter to the Class declaration allows us to remove the runtime cast from step 5. Generics are a compile
+	artifact and so this allows the compiler to determine whether the assignment is valid. This can be tested by changing
+	
+		Class<BankAccount> baCls = BankAccount.class;
+	
+	to
+	
+		Class<BankAccount> baCls = String.class;
+
+7.	Balance of 115.0 is displayed and aStorage and sStorage are shown as having EQUAL classes.
