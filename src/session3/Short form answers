@@ -43,4 +43,39 @@ Session 3 Short form answers
 			// decide whether to provide an instance
 	}
 
-6.	
+6.	A object instantiation may take significant resources to implement e.g. database connections and may 
+	be lazy-instantiated to enable applications to start up faster or consume remote resources only when required.
+	
+7.	public class Controller extends Observable {
+
+		void observersNeedNotifyingOfThis() {
+		
+			// when observers need notifying
+			setChanged();
+			notifyObservers();
+		}
+		
+	} 
+	
+	public class ObserverClass implements Observer {
+	
+		Observable notifier;
+		
+		public void setNotifier(Observable notifier) {
+
+			// obtain an instance of the Observable , possibly from DI
+			this.notifier = notifier;
+			notifier.register(this);
+		}
+		
+		@Override
+		update(Observable o, Object arg) {
+			// code to handle notification from notifier ...
+		}
+	}
+
+8.	
+	
+	
+	
+			
