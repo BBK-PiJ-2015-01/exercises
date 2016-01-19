@@ -88,14 +88,18 @@ Session 3 Short form answers
 		}
 	}
 
-8.	True. The Controller is the Observer and the Model and View are the Observabls.
+8.	True. The Controller is the Observer and the Model and View are the Observables. 
 
 9.	Method examples 
 
 		Executors.new....();	// obtain an instance of an ExecutorService
 		Class.newInstance() 	// a new instance of a T class type
 	
-10.	
+10.	Model answer: No instances of the keyword 'new', returns an abstract type (interface/abstract class)
 	
-11.	Decorator
-			
+11.	Decorator. 
+
+	Model answer: WrapFilter obj = new Justifier( new Wrapper ( new RandomCase(System.out))));
+	
+		
+		
