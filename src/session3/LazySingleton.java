@@ -4,6 +4,7 @@ public class LazySingleton {
 
 	static private LazySingleton instance;
 
+
 	private LazySingleton() {
 		// Do nothing as yet
 	}
@@ -11,7 +12,6 @@ public class LazySingleton {
 	public static synchronized LazySingleton getInstance() {
 
 		if (instance == null) {
-
 			instance = instance();
 		}
 		return instance;
