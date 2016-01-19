@@ -1,6 +1,10 @@
 package session3;
 
-public class SingletonProtected implements Cloneable {
+import java.io.Serializable;
+
+public class SingletonProtected implements Cloneable, Serializable {
+
+	private static final long serialVersionUID = -370814771141840459L;
 
 	static private SingletonProtected instance;
 	
@@ -27,4 +31,9 @@ public class SingletonProtected implements Cloneable {
 
 		throw new CloneNotSupportedException(CANNOT_CLONE);
 	}
+	
+	private Object readResolve() {
+
+	    return instance;
+	  }
 }

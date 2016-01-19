@@ -1,6 +1,15 @@
 package session3;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,33 +43,28 @@ public class SingletonTest {
 		EagerSingleton instance2 = instance.getInstance();
 		assertEquals(instance, instance2);
 	}
-	
-	@Test(expected=CloneNotSupportedException.class)
-	public void singletonProtectedCloneable() throws CloneNotSupportedException{
+
+	@Test(expected = CloneNotSupportedException.class)
+	public void singletonProtectedCloneable() throws CloneNotSupportedException {
 
 		SingletonProtected instance = SingletonProtected.getInstance();
 		@SuppressWarnings("unused")
 		Object instance2 = instance.clone();
 	}
-	
-	
-	public void singletonProtectedReflection() {
-
-		EagerSingleton instance = EagerSingleton.getInstance();
-		EagerSingleton instance2 = null;
-		try {
-			instance2 = EagerSingleton.class.newInstance();
-		} catch (InstantiationException | IllegalAccessException e) {
-			//Should not be thrown
-		}
-		assertEquals(instance ,instance2);
-	}
 
 	@Test
-	public void singletonProtectedSerializable() {
+	public void singletonProtectedSerializable() throws IOException, ClassNotFoundException {
 
 		SingletonProtected instance = SingletonProtected.getInstance();
-		EagerSingleton instance2 = null;
-		assertEquals(instance ,instance2);
+		// Stream it out
+		ByteArrayOutputStream storage = new ByteArrayOutputStream();
+		ObjectOutputStream outStream = new ObjectOutputStream(storage);
+		outStream.writeObject(instance);
+
+		// Stream it in
+		InputStream input = new ByteArrayInputStream(storage.toByteArray());
+		ObjectInputStream inStream = new ObjectInputStream(input);	
+		SingletonProtected instance2 = (SingletonProtected) inStream.readObject();
+		assertEquals(instance, instance2);
 	}
 }
