@@ -1,1 +1,46 @@
 Session 3 Short form answers
+
+1. 	Abstract classes can have state whereas interfaces cannot.
+	A class can inherit from only one abstract class but can implement many interfaces.
+	
+	
+2.	
+	a.	False. e.g. Serializable
+	b.	
+	c.	
+
+3.	Any interface that declares default methods.
+
+	interface Structure {
+	
+		default void clear () {
+			System.out.println("clear() not implemented.");
+	}
+	
+4.	Adapter classes allow simple concrete classes to inherit from them and only provide behaviour for a single method.
+	The adapter superclass implements empty methods that satisfy the interface contract. These are commonly used in GUI
+	applications where the developer doesn't want to implement a whole class for a single method.
+	
+	class SimpleWindowAdapter extends WindowAdapter {
+	
+		public void windowClosing() {
+		
+		// The only method in which we are interested. Some implementation code here...
+		}
+	}
+	
+5.	A class can have a private constructor and a factory method to control instantiation. This is the basis of the 
+	SIngleton pattern
+
+	public class SingleClass {
+		...
+		private SingleClass() {
+			// only SingleClass can instantiate
+		}
+		
+		public static SingleClass getInstance() {
+		
+			// decide whether to provide an instance
+	}
+
+6.	
