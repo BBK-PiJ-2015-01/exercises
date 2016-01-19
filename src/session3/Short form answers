@@ -5,18 +5,20 @@ Session 3 Short form answers
 	
 	
 2.	
-	a.	False. e.g. Serializable
-	b.	
-	c.	
+	a.	False. e.g. Serializable (marker interface)
+	b.	False. Fields are static, final and public.
+	c.	False. 
 
 3.	Any interface that declares default methods.
 
 	interface Structure {
 	
 		default void clear () {
-			System.out.println("clear() not implemented.");
+			System.out.println("clear() not implemented.");		
 	}
 	
+	Model answer: refers to an async call or any method that is 'inverted' i.e. always called from a remote instance.
+		
 4.	Adapter classes allow simple concrete classes to inherit from them and only provide behaviour for a single method.
 	The adapter superclass implements empty methods that satisfy the interface contract. These are commonly used in GUI
 	applications where the developer doesn't want to implement a whole class for a single method.
@@ -29,10 +31,15 @@ Session 3 Short form answers
 		}
 	}
 	
+	Model answer: can be replaced by default methods in and interface.
+	
 5.	A class can have a private constructor and a factory method to control instantiation. This is the basis of the 
-	SIngleton pattern
+	Singleton pattern
 
 	public class SingleClass {
+	
+	
+	private SingleClass instance;
 		...
 		private SingleClass() {
 			// only SingleClass can instantiate
@@ -41,10 +48,17 @@ Session 3 Short form answers
 		public static SingleClass getInstance() {
 		
 			// decide whether to provide an instance
+			
+			if (instance == null) {
+				instance = new SingleClass();
+			}
+			return instance;
 	}
 
 6.	A object instantiation may take significant resources to implement e.g. database connections and may 
 	be lazy-instantiated to enable applications to start up faster or consume remote resources only when required.
+	
+	code required
 	
 7.	public class Controller extends Observable {
 
@@ -74,8 +88,14 @@ Session 3 Short form answers
 		}
 	}
 
-8.	
+8.	True. The Controller is the Observer and the Model and View are the Observabls.
+
+9.	Method examples 
+
+		Executors.new....();	// obtain an instance of an ExecutorService
+		Class.newInstance() 	// a new instance of a T class type
 	
+10.	
 	
-	
+11.	Decorator
 			
