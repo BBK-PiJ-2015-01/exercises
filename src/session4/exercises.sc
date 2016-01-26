@@ -191,6 +191,11 @@ object exercises {
       }
       percentFull // Return this value
     }
+    def get = percentFull
+    def set(pf: Int): Int = {
+      percentFull = pf
+      percentFull
+    }
   }
 
   val cup = new Cup                               //> cup  : session4.exercises.Cup = session4.exercises$$anonfun$main$1$Cup$1@53
@@ -210,4 +215,35 @@ object exercises {
 
   cup.percentFull = 56
   cup.percentFull is 56                           //> 56
+
+  cup.get                                         //> res4: Int = 56
+  cup.set(22)                                     //> res5: Int = 22
+  cup.get                                         //> res6: Int = 22
+
+  /*
+  =====================================================================
+	Vectors
+	=====================================================================
+*/
+
+  val vc1 = Vector empty                          //> vc1  : scala.collection.immutable.Vector[Nothing] = Vector()
+  val vc2 = Vector(1, 2, 3)                       //> vc2  : scala.collection.immutable.Vector[Int] = Vector(1, 2, 3)
+  vc2.sum                                         //> res7: Int = 6
+  vc2.min                                         //> res8: Int = 1
+  vc2.max                                         //> res9: Int = 3
+  val vc3 = Vector(1.0, 2.0, 3.0)                 //> vc3  : scala.collection.immutable.Vector[Double] = Vector(1.0, 2.0, 3.0)
+  vc3.sum                                         //> res10: Double = 6.0
+  vc3.min                                         //> res11: Double = 1.0
+  vc3.max                                         //> res12: Double = 3.0
+  val vc4 = Vector('1', '2', '3')                 //> vc4  : scala.collection.immutable.Vector[Char] = Vector(1, 2, 3)
+  val vc5 = Vector("1", "2", "3")                 //> vc5  : scala.collection.immutable.Vector[String] = Vector(1, 2, 3)
+  val vc6 = Vector(Vector empty, Vector empty, Vector empty)
+                                                  //> vc6  : scala.collection.immutable.Vector[scala.collection.immutable.Vector[
+                                                  //| Nothing]] = Vector(Vector(), Vector(), Vector())
+  val vc7 = Vector("one", "two", "three")         //> vc7  : scala.collection.immutable.Vector[String] = Vector(one, two, three)
+                                                  //| 
+  vc7.foreach{ println }                          //> one
+                                                  //| two
+                                                  //| three
+
 }
