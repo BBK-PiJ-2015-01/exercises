@@ -1,4 +1,4 @@
-package session5;
+package session5.strategy;
 
 public abstract class TextEditor {
 	

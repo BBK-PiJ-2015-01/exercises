@@ -1,4 +1,4 @@
-package session5;
+package session5.strategy;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
