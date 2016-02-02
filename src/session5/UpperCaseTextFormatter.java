@@ -2,7 +2,7 @@ package session5;
 
 import java.io.PrintStream;
 
-public class UpperCaseTextFormatter extends PrintStreamTextFormatter {
+public class UpperCaseTextFormatter extends AbstractTextFormatter {
 
 	
 	public UpperCaseTextFormatter() {
