@@ -1,0 +1,25 @@
+ 1.	(a)  Briefly describe the Strategy Design Pattern?
+	(b)  When is it appropriate to use the Strategy Design Pattern?
+	
+	(a) The Strategy pattern allows class functionality to be implemented by external classes.
+	(b)	The Strategy pattern is used to implement class behaviour through composition as opposed to inheritance. 
+		Behaviour is defined through interfaces which are aggregated within a class and implemented through separate 
+		concrete classes. This also lends itself to dependency injection.
+
+3.	When is it appropriate to use the Abstract Factory design pattern?
+
+	This pattern is used to specify the behaviour of groups of factories that produce related products. 
+	
+5. 	"In general, the details of object construction, such as instantiating and initialising the components that comprise the 
+	object, are	kept within the object, often as part of its constructor.”
+
+	Comment on this statement with reference to modularity and construction bloat.
+
+7.	(a)	What is the Facade Pattern?
+	(b)	When, and why, would you use the Facade Pattern?
+	
+9.	When should one make use of the Bridge Design Pattern?
+
+11.	(a)	What is the Composite Pattern?
+	(b)	Under what conditions would you use a Composite Design Pattern?
+	(c)	What are the four participants of the Composite Design Pattern?
