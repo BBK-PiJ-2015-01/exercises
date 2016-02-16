@@ -3,8 +3,8 @@ package session4
 import com.atomicscala.AtomicTest._
 
 object exercises {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(118); 
-  println("Welcome to the Scala worksheet.");$skip(172); 
-
+  println("Welcome to the Scala worksheet.");$skip(173); 
+ 
   /*
  	=====================================================================
 	REPL
@@ -177,25 +177,25 @@ object exercises {;import org.scalaide.worksheet.runtime.library.WorksheetSuppor
     }
   };$skip(611); 
 
-  val cup = new Cup;System.out.println("""cup  : session4.exercises.Cup = """ + $show(cup ));$skip(20); val res$4 = 
-  cup.add(45) is 45;System.out.println("""res4: <error> = """ + $show(res$4));$skip(21); val res$5 = 
-  cup.add(-15) is 30;System.out.println("""res5: <error> = """ + $show(res$5));$skip(73); 
+  val cup = new Cup;System.out.println("""cup  : session4.exercises.Cup = """ + $show(cup ));$skip(20); 
+  cup.add(45) is 45;$skip(21); 
+  cup.add(-15) is 30;$skip(73); 
   // Now no longer valid
   //  cup.add(-50) is -20
 
-  val cup2 = new Cup;System.out.println("""cup2  : session4.exercises.Cup = """ + $show(cup2 ));$skip(21); val res$6 = 
-  cup2.add(45) is 45;System.out.println("""res6: <error> = """ + $show(res$6));$skip(21); val res$7 = 
-  cup2.add(-55) is 0;System.out.println("""res7: <error> = """ + $show(res$7));$skip(21); val res$8 = 
-  cup2.add(10) is 10;System.out.println("""res8: <error> = """ + $show(res$8));$skip(20); val res$9 = 
-  cup2.add(-9) is 1;System.out.println("""res9: <error> = """ + $show(res$9));$skip(20); val res$10 = 
-  cup2.add(-2) is 0;System.out.println("""res10: <error> = """ + $show(res$10));$skip(24); 
+  val cup2 = new Cup;System.out.println("""cup2  : session4.exercises.Cup = """ + $show(cup2 ));$skip(21); 
+  cup2.add(45) is 45;$skip(21); 
+  cup2.add(-55) is 0;$skip(21); 
+  cup2.add(10) is 10;$skip(20); 
+  cup2.add(-9) is 1;$skip(20); 
+  cup2.add(-2) is 0;$skip(24); 
 
-  cup.percentFull = 56;$skip(24); val res$11 = 
-  cup.percentFull is 56;System.out.println("""res11: <error> = """ + $show(res$11));$skip(11); val res$12 = 
+  cup.percentFull = 56;$skip(24); 
+  cup.percentFull is 56;$skip(11); val res$4 = 
 
-  cup.get;System.out.println("""res12: Int = """ + $show(res$12));$skip(14); val res$13 = 
-  cup.set(22);System.out.println("""res13: Int = """ + $show(res$13));$skip(10); val res$14 = 
-  cup.get;System.out.println("""res14: Int = """ + $show(res$14));$skip(187); 
+  cup.get;System.out.println("""res4: Int = """ + $show(res$4));$skip(14); val res$5 = 
+  cup.set(22);System.out.println("""res5: Int = """ + $show(res$5));$skip(10); val res$6 = 
+  cup.get;System.out.println("""res6: Int = """ + $show(res$6));$skip(187); 
 
   /*
   =====================================================================
@@ -204,14 +204,14 @@ object exercises {;import org.scalaide.worksheet.runtime.library.WorksheetSuppor
 */
 
   val vc1 = Vector empty;System.out.println("""vc1  : scala.collection.immutable.Vector[Nothing] = """ + $show(vc1 ));$skip(28); 
-  val vc2 = Vector(1, 2, 3);System.out.println("""vc2  : scala.collection.immutable.Vector[Int] = """ + $show(vc2 ));$skip(10); val res$15 = 
-  vc2.sum;System.out.println("""res15: Int = """ + $show(res$15));$skip(10); val res$16 = 
-  vc2.min;System.out.println("""res16: Int = """ + $show(res$16));$skip(10); val res$17 = 
-  vc2.max;System.out.println("""res17: Int = """ + $show(res$17));$skip(34); 
-  val vc3 = Vector(1.0, 2.0, 3.0);System.out.println("""vc3  : scala.collection.immutable.Vector[Double] = """ + $show(vc3 ));$skip(10); val res$18 = 
-  vc3.sum;System.out.println("""res18: Double = """ + $show(res$18));$skip(10); val res$19 = 
-  vc3.min;System.out.println("""res19: Double = """ + $show(res$19));$skip(10); val res$20 = 
-  vc3.max;System.out.println("""res20: Double = """ + $show(res$20));$skip(34); 
+  val vc2 = Vector(1, 2, 3);System.out.println("""vc2  : scala.collection.immutable.Vector[Int] = """ + $show(vc2 ));$skip(10); val res$7 = 
+  vc2.sum;System.out.println("""res7: Int = """ + $show(res$7));$skip(10); val res$8 = 
+  vc2.min;System.out.println("""res8: Int = """ + $show(res$8));$skip(10); val res$9 = 
+  vc2.max;System.out.println("""res9: Int = """ + $show(res$9));$skip(34); 
+  val vc3 = Vector(1.0, 2.0, 3.0);System.out.println("""vc3  : scala.collection.immutable.Vector[Double] = """ + $show(vc3 ));$skip(10); val res$10 = 
+  vc3.sum;System.out.println("""res10: Double = """ + $show(res$10));$skip(10); val res$11 = 
+  vc3.min;System.out.println("""res11: Double = """ + $show(res$11));$skip(10); val res$12 = 
+  vc3.max;System.out.println("""res12: Double = """ + $show(res$12));$skip(34); 
   val vc4 = Vector('1', '2', '3');System.out.println("""vc4  : scala.collection.immutable.Vector[Char] = """ + $show(vc4 ));$skip(34); 
   val vc5 = Vector("1", "2", "3");System.out.println("""vc5  : scala.collection.immutable.Vector[String] = """ + $show(vc5 ));$skip(61); 
   val vc6 = Vector(Vector empty, Vector empty, Vector empty);System.out.println("""vc6  : scala.collection.immutable.Vector[scala.collection.immutable.Vector[Nothing]] = """ + $show(vc6 ));$skip(42); 
