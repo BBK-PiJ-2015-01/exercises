@@ -34,6 +34,12 @@ object MapReduce {
   val rv = Vector(1, 10, 100, 1000)               //> rv  : scala.collection.immutable.Vector[Int] = Vector(1, 10, 100, 1000)
   rv.reduce((sum, n) => sum + n) is 1111          //> 1111
 
+  var sum = 0                                     //> sum  : Int = 0
+  for (n <- rv) {
+    sum += n
+  }
+  sum is 1111                                     //> 1111
+
   println("Question 4.")                          //> Question 4.
 
   def sumIt(ints: Int*) = ints.reduce((x, y) => x + y)
